@@ -1,0 +1,15 @@
+FROM redis/redis-stack:latest
+
+ENV REDIS_ARGS="--requirepass mypassword"
+# ENV REDISEARCH_ARGS=
+# ENV REDISJSON_ARGS=
+# ENV REDISGRAPH_ARGS=
+# ENV REDISTIMESERIES_ARGS=
+# ENV REDISBLOM_ARGS=
+
+VOLUME /local-data/ /data
+VOLUME `pwd`/local-redis-stack.conf:/redis-stack.conf
+# VOLUME /var/log /var/dba
+
+EXPOSE 6379
+EXPOSE 8001
